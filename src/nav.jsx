@@ -51,7 +51,7 @@ const Nav = () => {
 
         {/* Logo */}
         <Link to="/" className="nav-logo">
-          Shivam<span>.</span>
+          API
         </Link>
 
         {/* Desktop / Mobile Menu */}
