@@ -1,0 +1,305 @@
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(10, 15, 25, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Main Container */
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+
+  min-height: 78px;
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ================================
+   LOGO
+================================ */
+
+.nav-logo {
+  text-decoration: none;
+  color: #ffffff;
+
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+
+  transition: 0.3s ease;
+}
+
+.nav-logo span {
+  color: #ff7200;
+}
+
+.nav-logo:hover {
+  transform: translateY(-1px);
+}
+
+/* ================================
+   MENU
+================================ */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+/* Links */
+
+.nav-link {
+  position: relative;
+
+  text-decoration: none;
+  color: #d8dce5;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  padding: 8px 0;
+
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #ff7200;
+  border-radius: 10px;
+
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.nav-btn {
+  text-decoration: none;
+
+  background: linear-gradient(135deg, #ff7200, #ff9d42);
+  color: #ffffff;
+
+  padding: 12px 22px;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  box-shadow: 0 8px 20px rgba(255, 114, 0, 0.22);
+
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(255, 114, 0, 0.35);
+}
+
+/* ================================
+   MOBILE MENU BUTTON
+================================ */
+
+.menu-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  padding: 8px;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Hamburger lines */
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+
+  background: #ffffff;
+
+  border-radius: 5px;
+
+  transition: 0.3s ease;
+}
+
+/* ================================
+   HAMBURGER ANIMATION
+================================ */
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+  .nav-menu {
+    gap: 22px;
+  }
+
+  .nav-container {
+    padding: 0 20px;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .nav-container {
+    min-height: 70px;
+  }
+
+  .nav-logo {
+    font-size: 25px;
+  }
+
+  /* Hide normal menu */
+
+  .nav-menu {
+    position: absolute;
+
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 20px 30px;
+
+    background: rgba(10, 15, 25, 0.98);
+    backdrop-filter: blur(16px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 8px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.35s ease;
+  }
+
+  /* Open menu */
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile links */
+
+  .nav-link {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border-radius: 8px;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 114, 0, 0.08);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  /* Mobile button */
+
+  .nav-btn {
+    text-align: center;
+    margin-top: 8px;
+    padding: 14px;
+  }
+
+  /* Show hamburger */
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .nav-logo {
+    font-size: 23px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+}
